@@ -71,7 +71,20 @@ base, limit 레지스터는 오직 운영체제의 특권 명령(privileged inst
 * Load time : compile time에 메모리의 시작 위치를 모르는 경우 컴파일러는 상대적 위치를 생성하고 바인딩을 load time까지 미룬다. 만약 시작 주소가 바뀐 경우 변경된 값을 포함한 유저 코드만 다시 로드(reload) 한다.
 * Execution time : 만약 프로세스가 실행중에 메모리 세그먼트를 다른 위치로 변경하는 경우 바인딩은 run time까지 미뤄진다. 이 작업은 하드웨어의 지원이 필요하며 현대의 컴퓨터 시스템은 대부분 이 바인딩 기법을 사용한다.
 
+## Logical versus Physical Address Space
+> * Logical address (논리 주소) : CPU에 의해 생성되는 주소
+> * Physical address (물리 주소) : 메모리 장치가 취급하는 주소 (==메모리 장치의 메모리 주소 레지스터 (Memory-address register)에 로드되는 주소)
+   
+Compile time binding, Load time binding에서 주소 생성 방법은 논리 주소와 물리 주소가 동일하다. 하지만 Execution time binding에서 논리 주소와 물리 주소는 별개의 주소 공간이다. 즉 프로그램이 논리 주소 공간을 생성시킬 때 물리 주소 공간도 생성이 되고 **두 공간은 다른 공간**이다.   
+논리 주소(logical address)는 가상 주소(virtual address)라고도 부른다.   
 
+   
+런타임 환경에서 가상 주소를 물리 주소로 맵핑(mapping)하는 것은 하드웨어의 MMU(Memory-management unit)가 담당한다. 맵핑 하는 방법에는 다양한 방법이 있는데 이는 나중에 설명한다.
+
+간단한 MMU (simple MMU)는 우리가 앞서 살펴봤던 base, limit register를 이용한 방식이다. 이때 base register를 **relocation register**이라고도 부른다.
+사용자 프로그램은 가상 주소만을 다루며 물리 주소에 직접 접근할 수 없다. 또 가상 주소 공간들은 **실제로 메모리 공간을 참조할 때 실제 위치가 할당**된다.   
+**가상 주소가 여러 물리 주소에 바인딩 되는 개념은 메모리 관리 기법의 핵심이다.**
 
 [log]
 - 2020/08/31 ~Address binding까지 작성
+- 2020/09/01 Logical versus physical address space 작성
