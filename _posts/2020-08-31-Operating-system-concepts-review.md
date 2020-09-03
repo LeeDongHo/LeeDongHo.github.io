@@ -18,4 +18,4 @@ tags:
 <br>
 <br>
 
-1. [Background](2020-08-31-ch8-background.md)
+1. [Background](http://domo.kr/os/ch8-background/)
