@@ -19,3 +19,4 @@ tags:
 <br>
 
 1. [Background](http://domo.kr/os/ch8-background/)
+2. [Swapping](http://domo.kr/os/ch8-swapping/)
