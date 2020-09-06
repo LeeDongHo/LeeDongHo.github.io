@@ -3,7 +3,7 @@ title: "OS ch8 메모리관리_2_swapping"
 categories:
     - OS
 tags:
-    - OS, Memory management, swapping
+    - OS,Memory management,swapping
 ---
 
 # CH8-2 Swapping

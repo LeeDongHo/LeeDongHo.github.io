@@ -3,7 +3,7 @@ title: "OS ch8 메모리관리_1_background"
 categories:
     - OS
 tags:
-    - OS, Memory management
+    - OS,Memory management
 ---
 
 # CH8-1. background
